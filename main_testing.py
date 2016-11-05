@@ -18,50 +18,51 @@ BLUE = (0, 0, 255)
 
 # Load Images
 bequietImg = pygame.image.load("shh.png")
+bequietImg = pygame.transform.scale(bequietImg,(1280, 875))
 classicImg = pygame.image.load("classic.jpg")
+classicImg = pygame.transform.scale(classicImg,(1280, 875))
 kitchencatsImg = pygame.image.load('kitchencats.jpg')
-knightIcon = pygame.image.load('shh.png')
 loneknightImg = pygame.image.load("loneknight.png")
+loneknightImg = pygame.transform.scale(loneknightImg,(1280, 875))
+knightIcon = pygame.image.load('shh.png')
 
-# Set up fonts
-edfont = pygame.font.SysFont("impact", 72)
-edfont2 = pygame.font.SysFont("impact", 60)
-Textfont = pygame.font.SysFont("impact", 45)
-Textfont2 = pygame.font.SysFont("impact", 50)
-kitchencatsfont = pygame.font.SysFont('Roman', 90)
+#Set up fonts
+memefont = pygame.font.SysFont('Impact', 72)
 
 window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 window.fill(WHITE)
 pygame.display.set_caption('Memes')
 clock = pygame.time.Clock()
-#PXArray = pygame.PixelArray(window)
 
 """Ed's Lecture Meme (Press 'e' on keyboard)"""
 def edlecture():
 
-    # Meme text font, size, anti-aliasing and colour
-    Fontimg = edfont.render("When Ed's lecture is", 1, WHITE)
-    Fontimg2 = edfont2.render("9AM monday morning", 1, WHITE)
+    # Set edlecture meme text
+    Fontimg = memefont.render("When Ed's lecture is", 1, WHITE)
+    Fontimg2 = memefont.render("9AM monday morning", 1, WHITE)
+    # Blit edlecture meme to screen
+    window.fill(WHITE)
     window.blit(classicImg, (0, 0))
     window.blit(Fontimg, (25, 0))
-    window.blit(Fontimg2, (53, 400))
+    window.blit(Fontimg2, (450, 740))
 
 """Crusading Meme (Press 'c' on keyboard)"""
 def crusadememe():
 
+    # Add icon and caption
     knightIcon = pygame.image.load('knight.png')
     pygame.display.set_icon(knightIcon)
     pygame.display.set_caption("Take back Jerusalem")
 
-    # Meme text font, size, anti-aliasing and colour
-    Fontimg = Textfont.render("When you were supposed to go crusading", 1, WHITE)
-    Fontimg2 = Textfont2.render("but your squad ditches you", 1, WHITE)
+    # Set crusade meme text
+    Fontimg = memefont.render("When you were supposed to go crusading", 1, WHITE)
+    Fontimg2 = memefont.render("but your squad ditches you", 1, WHITE)
 
-    # Loads, draws and updates the meme/display
+    # Blit crusadememe to screen
+    window.fill(WHITE)
     window.blit(loneknightImg, (0, 0))
     window.blit(Fontimg, (20, 10))
     window.blit(Fontimg2, (120, 450))
-    pygame.display.update()
 
 """Homework Meme (Press 'h' on keyboard)"""
 def homeworkmeme():
@@ -70,18 +71,20 @@ def homeworkmeme():
     pygame.display.set_caption("pls stop")
 
     # Meme text font, size, anti-aliasing and colour
-    Fontimg = Textfont.render("When someone is about to remind", 1, WHITE)
-    Fontimg2 = Textfont2.render("the teacher about homework", 1, WHITE)
+    Fontimg = memefont.render("When someone is about to remind", 1, WHITE)
+    Fontimg2 = memefont.render("the teacher about homework", 1, WHITE)
 
     # Loads, draws and updates the meme/display
+    window.fill(WHITE)
     window.blit(bequietImg, (0, 0))
     window.blit(Fontimg, (11, 10))
     window.blit(Fontimg2, (32, 415))
 
 """Kitchen Cat Meme (Press 'k' on keyboard)"""
 def kitchencats():
-    text = kitchencatsfont.render('When a flatmate', True, WHITE)
-    text2 = kitchencatsfont.render("won't wash up.", True, WHITE)
+    text = memefont.render('When a flatmate', True, WHITE)
+    text2 = memefont.render("won't wash up.", True, WHITE)
+    window.fill(WHITE)
     window.blit(kitchencatsImg, (0, 0))
     window.blit(text, (20, 10))
     window.blit(text2, (60, 100))
@@ -150,13 +153,21 @@ while True:
         if event.type == KEYDOWN and event.key == K_k:
             kitchencats()
         if event.type == KEYDOWN and event.key == K_r:
+            PXArray = pygame.PixelArray(window)
             makered()
+            del PXArray
         if event.type == KEYDOWN and event.key == K_g:
+            PXArray = pygame.PixelArray(window)
             makegreen()
+            del PXArray
         if event.type == KEYDOWN and event.key == K_b:
+            PXArray = pygame.PixelArray(window)
             makeblue()
+            del PXArray
         if event.type == KEYDOWN and event.key == K_n:
+            PXArray = pygame.PixelArray(window)
             negative()
+            del PXArray
         if event.type == KEYDOWN and event.key == K_e:
             edlecture()
         if event.type == KEYDOWN and event.key == K_c:
