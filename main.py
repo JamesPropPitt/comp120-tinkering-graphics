@@ -27,7 +27,8 @@ loneknightImg = pygame.transform.scale(loneknightImg,(1280, 875))
 knightIcon = pygame.image.load('shh.png')
 
 #Set up fonts
-memefont = pygame.font.SysFont('Impact', 72)
+FONTSIZE = 72
+memefont = pygame.font.SysFont('Impact', FONTSIZE)
 
 window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
 window.fill(WHITE)
@@ -126,7 +127,7 @@ def makeblue():
             GREEN = window.get_at((X, Y)).g
             BLUE = window.get_at((X, Y)).b
 
-            RED = 255 - Red
+            RED = 255 - RED
             GREEN = 255 - GREEN
             BLUE = 255
 
