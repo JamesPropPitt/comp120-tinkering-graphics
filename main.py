@@ -6,8 +6,8 @@ pygame.init()
 pygame.font.init()
 
 # set up window
-WINDOW_WIDTH = 1280
-WINDOW_HEIGHT = 875
+WINDOW_WIDTH = 1260
+WINDOW_HEIGHT = 900
 
 # set up colours
 BLACK = (0, 0, 0)
@@ -18,12 +18,12 @@ BLUE = (0, 0, 255)
 
 # Load Images
 bequietImg = pygame.image.load("shh.png")
-bequietImg = pygame.transform.scale(bequietImg,(1280, 875))
+bequietImg = pygame.transform.scale(bequietImg,(WINDOW_WIDTH, WINDOW_HEIGHT))
 classicImg = pygame.image.load("classic.jpg")
-classicImg = pygame.transform.scale(classicImg,(1280, 875))
+classicImg = pygame.transform.scale(classicImg,(WINDOW_WIDTH, WINDOW_HEIGHT))
 kitchencatsImg = pygame.image.load('kitchencats.jpg')
 loneknightImg = pygame.image.load("loneknight.png")
-loneknightImg = pygame.transform.scale(loneknightImg,(1280, 875))
+loneknightImg = pygame.transform.scale(loneknightImg,(WINDOW_WIDTH, WINDOW_HEIGHT))
 knightIcon = pygame.image.load('shh.png')
 
 #Set up fonts
