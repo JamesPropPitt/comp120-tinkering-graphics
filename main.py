@@ -5,7 +5,7 @@ from pygame.locals import *
 pygame.init()
 pygame.font.init()
 
-# set up window
+# set up window and co-ordinates
 WINDOW_WIDTH = 1260
 WINDOW_HEIGHT = 900
 
@@ -67,7 +67,7 @@ def crusadememe():
 
 """Homework Meme (Press 'h' on keyboard)"""
 def homeworkmeme():
-
+    # Add icon and caption
     pygame.display.set_icon(knightIcon)
     pygame.display.set_caption("pls stop")
 
